@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Sprites/Spritesheets/1.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Spritesheets/0.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/charles.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/key.gd" type="Script" id=5]
+
+[node name="Scene" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="key0" type="Node2D" parent="."]
+script = ExtResource( 5 )
+
+[node name="sprite" type="Sprite" parent="key0"]
+position = Vector2( 88, 69 )
+texture = ExtResource( 2 )
+hframes = 3
+
+[node name="key1" type="Node2D" parent="."]
+
+[node name="sprite" type="Sprite" parent="key1"]
+position = Vector2( 427, 161 )
+texture = ExtResource( 1 )
+hframes = 3
+
+[node name="charles" parent="." instance=ExtResource( 3 )]
