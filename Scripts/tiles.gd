@@ -6,6 +6,15 @@ var ids = {
 	"E": [4, 5]
 }
 
+func getIds():
+	return ids
+	
+func findTileKeyById(id):
+	for key in ids:
+		if id in ids[key]:
+			return  key
+	return "NOTFOUND"
+
 func handle_input(input):
 	if Input.is_action_just_pressed(input):
 		var cells = get_used_cells_by_id(ids[input][0])
