@@ -1,22 +1,11 @@
+class_name Key
 extends Node2D
 
+export(String) var key = "A"
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+signal key_pressed(pos)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-func _input(ev):
-	if ev is InputEventKey and ev.scancode == KEY_1:
-		#trigger animation
-		print("Hola")
-		pass
+func _input(event):
+	if event.is_action_pressed(key):
+		emit_signal("key_pressed", global_position)

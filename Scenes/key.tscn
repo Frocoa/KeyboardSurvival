@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/key.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Spritesheets/A.png" type="Texture" id=2]
+
+[node name="Key" type="Sprite"]
+texture = ExtResource( 2 )
+hframes = 3
+script = ExtResource( 1 )

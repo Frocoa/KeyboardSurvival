@@ -5,13 +5,19 @@ onready var player = get_node("player")
 onready var tilemap = get_node("tileMap")
 var directions = {
 	"up": Vector2.UP,
-	"down": Vector2.DOWN,
+	"down": Vector2.DOWN + Vector2.RIGHT/2,
 	"left": Vector2.LEFT,
 	"right": Vector2.RIGHT
-}	
+}
+
+onready var keys = $Keys	
+
+func _on_key_pressed(pos):
+	player.global_position = pos
 
 func _ready():
-	pass # Replace with function body.
+	for key in keys.get_children():
+		key.connect("key_pressed", self, "_on_key_pressed")
 	
 func getGridPosition(coordinate):
 	return tilemap.world_to_map(tilemap.to_local(coordinate))
@@ -40,8 +46,8 @@ func _process(delta):
 		"right": getTileId(playerGridPos - Vector2.RIGHT)
 	}
 	
-	for dir in adjacentTileIds:
-		var key = tilemap.findTileKeyById(adjacentTileIds[dir])
-		if key != "NOTFOUND" and Input.is_action_just_pressed(key):
-			player.position -= directions[dir] * tile_size
-			break	
+#	for dir in adjacentTileIds:
+#		var key = tilemap.findTileKeyById(adjacentTileIds[dir])
+#		if key != "NOTFOUND" and Input.is_action_just_pressed(key):
+#			player.position -= directions[dir] * tile_size
+#			break	
