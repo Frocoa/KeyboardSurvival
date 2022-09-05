@@ -1,16 +1,18 @@
-extends Node
+extends Node2D
 
 var tile_size = 32
 onready var player = get_node("player")
 onready var tilemap = get_node("tileMap")
 var directions = {
 	"up": Vector2.UP,
-	"down": Vector2.DOWN + Vector2.RIGHT/2,
+	"down": Vector2.DOWN,
 	"left": Vector2.LEFT,
 	"right": Vector2.RIGHT
 }
 
-onready var keys = $Keys	
+
+
+onready var keys = $"%Keys"	
 
 func _on_key_pressed(pos):
 	player.global_position = pos
@@ -19,6 +21,18 @@ func _ready():
 	for key in keys.get_children():
 		key.connect("key_pressed", self, "_on_key_pressed")
 	
+	Navigation2DServer.map_force_update(get_world_2d().navigation_map)
+		
+	var path2 = Navigation2DServer.map_get_path(
+	get_world_2d().navigation_map,
+	keys.get_children()[0].global_position,
+	keys.get_children()[0].global_position + Vector2.RIGHT*5,
+	true
+	)
+	
+	print(keys.get_children()[0].global_position)
+	print(keys.get_children()[1].global_position)
+	print(path2)	
 func getGridPosition(coordinate):
 	return tilemap.world_to_map(tilemap.to_local(coordinate))
 

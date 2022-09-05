@@ -991,7 +991,10 @@ position = Vector2( -24, 48 )
 position = Vector2( 20, 21 )
 
 [node name="Keys" type="Node2D" parent="."]
+unique_name_in_owner = true
 
 [node name="Key" parent="Keys" instance=ExtResource( 1 )]
-position = Vector2( -132, -31 )
-key = "B"
+position = Vector2( -178, 5 )
+
+[node name="Key2" parent="Keys" instance=ExtResource( 1 )]
+position = Vector2( -159, 5 )
