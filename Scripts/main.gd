@@ -1,6 +1,7 @@
 extends Node2D
 
 var tile_size = 32
+export(int) var player_speed = 30
 onready var player = get_node("player")
 onready var tilemap = get_node("tileMap")
 var directions = {
@@ -41,8 +42,10 @@ func getTileId(gridPos):
 var count = 0
 func _process(delta):
 
-	if (current_objective - player.position).length() > 0.1:
-		player.position += (current_objective - player.position).normalized() / 5
+	if (current_objective - player.position).length() > 0.8:
+		player.position += (
+			(current_objective - player.position).normalized() 
+			* delta * player_speed)
 	else:
 		if len(path) >= movement_index + 2:
 			movement_index += 1
