@@ -14,51 +14,66 @@ var directions = {
 
 onready var keys = $"%Keys"	
 
+onready var current_objective = player.position
+var path = []
+var movement_index = 0
+
 func _on_key_pressed(pos):
-	player.global_position = pos
+	path = Navigation2DServer.map_get_path(
+	get_world_2d().navigation_map,
+	player.position,
+	pos,
+	true
+	)
+	movement_index = 0
 
 func _ready():
 	for key in keys.get_children():
 		key.connect("key_pressed", self, "_on_key_pressed")
 	
-	Navigation2DServer.map_force_update(get_world_2d().navigation_map)
-		
-	var path2 = Navigation2DServer.map_get_path(
-	get_world_2d().navigation_map,
-	keys.get_children()[0].global_position,
-	keys.get_children()[0].global_position + Vector2.RIGHT*5,
-	true
-	)
-	
-	print(keys.get_children()[0].global_position)
-	print(keys.get_children()[1].global_position)
-	print(path2)	
 func getGridPosition(coordinate):
 	return tilemap.world_to_map(tilemap.to_local(coordinate))
 
 func getTileId(gridPos):
 	return tilemap.get_cellv(gridPos)
 
+
+var count = 0
 func _process(delta):
 	
-	# esto es para mover el mono libremente y debugear
-	if Input.is_action_just_pressed("up"):
-		player.position += Vector2.UP * tile_size
-	if Input.is_action_just_pressed("down"):
-		player.position += Vector2.DOWN * tile_size
-	if Input.is_action_just_pressed("left"):
-		player.position += Vector2.LEFT * tile_size
-	if Input.is_action_just_pressed("right"):
-		player.position += Vector2.RIGHT * tile_size
-		
-	var tileIds = tilemap.getIds()
-	var playerGridPos = getGridPosition(player.position)
-	var adjacentTileIds = {
-		"up": getTileId(playerGridPos - Vector2.UP),
-		"down": getTileId(playerGridPos - Vector2.DOWN),
-		"left": getTileId(playerGridPos - Vector2.LEFT),
-		"right": getTileId(playerGridPos - Vector2.RIGHT)
-	}
+	if count == 30:
+		print("Path: " + str(path))
+		print("Player pos " + str(player.position))
+		print("currente objective " + str(current_objective))
+		print("len de coso " + str(len(path)))
+	count = (count + 1)%31
+	
+	if (current_objective - player.position).length() > 0.1:
+		player.position += (current_objective - player.position).normalized() / 5
+	else:
+		if len(path) >= movement_index + 2:
+			movement_index += 1
+			current_objective = path[movement_index]
+	
+#	# esto es para mover el mono libremente y debugear
+#	if Input.is_action_just_pressed("up"):
+#		player.position += Vector2.UP * tile_size
+#	if Input.is_action_just_pressed("down"):
+#		player.position += Vector2.DOWN * tile_size
+#	if Input.is_action_just_pressed("left"):
+#		player.position += Vector2.LEFT * tile_size
+#	if Input.is_action_just_pressed("right"):
+#		player.position += Vector2.RIGHT * tile_size
+#
+#	var tileIds = tilemap.getIds()
+#	var playerGridPos = getGridPosition(player.position)
+#	var adjacentTileIds = {
+#		"up": getTileId(playerGridPos - Vector2.UP),
+#		"down": getTileId(playerGridPos - Vector2.DOWN),
+#		"left": getTileId(playerGridPos - Vector2.LEFT),
+#		"right": getTileId(playerGridPos - Vector2.RIGHT)
+#	}
+
 	
 #	for dir in adjacentTileIds:
 #		var key = tilemap.findTileKeyById(adjacentTileIds[dir])
