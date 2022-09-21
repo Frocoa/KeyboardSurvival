@@ -989,17 +989,14 @@ script = ExtResource( 9 )
 position = Vector2( -24, 48 )
 current = true
 
+[node name="PauseMenu" parent="Camera2D" instance=ExtResource( 2 )]
+margin_left = -97.0
+margin_top = -171.0
+margin_right = 173.0
+margin_bottom = 75.0
+
 [node name="player" parent="." instance=ExtResource( 6 )]
 position = Vector2( -178, 5 )
-
-[node name="PauseMenu" parent="player" instance=ExtResource( 2 )]
-margin_left = -120.0
-margin_top = -158.0
-margin_right = 150.0
-margin_bottom = 88.0
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 20, 21 )
