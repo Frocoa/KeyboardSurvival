@@ -40,14 +40,7 @@ func getTileId(gridPos):
 
 var count = 0
 func _process(delta):
-	
-	if count == 30:
-		print("Path: " + str(path))
-		print("Player pos " + str(player.position))
-		print("currente objective " + str(current_objective))
-		print("len de coso " + str(len(path)))
-	count = (count + 1)%31
-	
+
 	if (current_objective - player.position).length() > 0.1:
 		player.position += (current_objective - player.position).normalized() / 5
 	else:
