@@ -16,7 +16,7 @@ onready var keys = $"%Keys"
 
 onready var current_objective = player.position
 var path = []
-var movement_index = 0
+var movement_index = 1
 
 func _on_key_pressed(pos):
 	path = Navigation2DServer.map_get_path(
@@ -25,7 +25,7 @@ func _on_key_pressed(pos):
 	pos,
 	true
 	)
-	movement_index = 0
+	movement_index = 1
 
 func _ready():
 	for key in keys.get_children():
