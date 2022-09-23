@@ -167,7 +167,8 @@ texture = ExtResource( 17 )
 key = "P"
 
 [node name="Bullet" parent="." instance=ExtResource( 12 )]
-position = Vector2( -4, -63 )
+position = Vector2( 92, -143 )
+rotation = 0.551288
 
 [node name="player" parent="." instance=ExtResource( 6 )]
 position = Vector2( -177, 1 )
@@ -182,3 +183,11 @@ margin_left = -97.0
 margin_top = -171.0
 margin_right = 173.0
 margin_bottom = 75.0
+
+[node name="Bullet2" parent="." instance=ExtResource( 12 )]
+position = Vector2( -343, -77 )
+rotation = -1.0367
+
+[node name="Bullet3" parent="." instance=ExtResource( 12 )]
+position = Vector2( 128, -28 )
+rotation = 1.27907

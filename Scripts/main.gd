@@ -1,6 +1,5 @@
 extends Node2D
 
-var tile_size = 32
 export(int) var player_speed = 30
 onready var player = get_node("player")
 var directions = {
@@ -26,6 +25,7 @@ func _on_key_pressed(pos):
 	true
 	)
 	movement_index = 1
+	current_objective = path[movement_index]
 
 func _ready():
 	for key in keys.get_children():
@@ -33,7 +33,7 @@ func _ready():
 
 func _process(delta):
 	if (current_objective - player.position).length() > 0.8:
-		player.position += (
+		player.translate(
 			(current_objective - player.position).normalized() 
 			* delta * player_speed)
 	else:
