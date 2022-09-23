@@ -15,7 +15,7 @@ onready var keys = $"%Keys"
 
 onready var current_objective = player.position
 var path = []
-var movement_index = 1
+var movement_index = 0
 
 func _on_key_pressed(pos):
 	path = Navigation2DServer.map_get_path(
@@ -24,7 +24,7 @@ func _on_key_pressed(pos):
 	pos,
 	true
 	)
-	movement_index = 1
+	movement_index = 0
 	current_objective = path[movement_index]
 
 func _ready():
@@ -36,8 +36,11 @@ func _process(delta):
 		player.translate(
 			(current_objective - player.position).normalized() 
 			* delta * player_speed)
+		player.get_node("AnimationPlayer").play('Walking')
 	else:
 		if len(path) >= movement_index + 2:
 			movement_index += 1
 			current_objective = path[movement_index]
+		else:
+			player.get_node("AnimationPlayer").play("RESET")
 	

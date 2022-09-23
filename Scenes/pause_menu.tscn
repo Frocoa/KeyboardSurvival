@@ -31,6 +31,7 @@ size_flags_vertical = 4
 [node name="Label" type="Label" parent="VBoxContainer"]
 margin_right = 270.0
 margin_bottom = 72.0
+custom_colors/font_color = Color( 0.101961, 0.0823529, 0.227451, 1 )
 custom_fonts/font = SubResource( 3 )
 text = "PAUSE"
 
