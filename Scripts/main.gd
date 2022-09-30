@@ -33,9 +33,7 @@ func _ready():
 
 func _process(delta):
 	if (current_objective - player.position).length() > 0.8:
-		player.translate(
-			(current_objective - player.position).normalized() 
-			* delta * player_speed)
+		player.position = player.position.move_toward(current_objective, player_speed * delta)
 		player.get_node("AnimationPlayer").play('Walking')
 	else:
 		if len(path) >= movement_index + 2:

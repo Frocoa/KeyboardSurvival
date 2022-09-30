@@ -1,42 +1,18 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/key.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/pause_menu.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Sprites/Spritesheets/H.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/main.gd" type="Script" id=4]
-[ext_resource path="res://Sprites/Spritesheets/C.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Sprites/Spritesheets/K.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/Spritesheets/J.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/Spritesheets/G.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/Spritesheets/D.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/Spritesheets/F.png" type="Texture" id=11]
 [ext_resource path="res://Bullet.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Sprites/Spritesheets/S.png" type="Texture" id=13]
-[ext_resource path="res://Sprites/Spritesheets/I.png" type="Texture" id=14]
-[ext_resource path="res://Sprites/Spritesheets/U.png" type="Texture" id=15]
-[ext_resource path="res://Sprites/Spritesheets/O.png" type="Texture" id=16]
-[ext_resource path="res://Sprites/Spritesheets/P.png" type="Texture" id=17]
-[ext_resource path="res://Sprites/Spritesheets/Y.png" type="Texture" id=18]
-[ext_resource path="res://Sprites/Spritesheets/M.png" type="Texture" id=19]
-[ext_resource path="res://Sprites/Spritesheets/L.png" type="Texture" id=20]
-[ext_resource path="res://Sprites/Spritesheets/Q.png" type="Texture" id=21]
-[ext_resource path="res://Sprites/Spritesheets/E.png" type="Texture" id=22]
-[ext_resource path="res://Sprites/Spritesheets/X.png" type="Texture" id=23]
-[ext_resource path="res://Sprites/Spritesheets/N.png" type="Texture" id=24]
-[ext_resource path="res://Sprites/Spritesheets/V.png" type="Texture" id=25]
-[ext_resource path="res://Sprites/Spritesheets/W.png" type="Texture" id=26]
-[ext_resource path="res://Sprites/Spritesheets/Z.png" type="Texture" id=27]
-[ext_resource path="res://Sprites/Spritesheets/R.png" type="Texture" id=28]
-[ext_resource path="res://Sprites/Spritesheets/B.png" type="Texture" id=29]
-[ext_resource path="res://Sprites/Spritesheets/T.png" type="Texture" id=30]
 [ext_resource path="res://Sprites/layers/parallax-mountain-bg.png" type="Texture" id=31]
 [ext_resource path="res://Sprites/layers/parallax-mountain-montain-far.png" type="Texture" id=32]
 [ext_resource path="res://Sprites/layers/parallax-mountain-foreground-trees.png" type="Texture" id=33]
+[ext_resource path="res://GroundKey.tscn" type="PackedScene" id=34]
 
 [node name="Scene" type="Node2D"]
 script = ExtResource( 4 )
-player_speed = 40
+player_speed = 50
 
 [node name="Parallax-mountain-bg" type="Sprite" parent="."]
 position = Vector2( -99, 30 )
@@ -60,127 +36,102 @@ position = Vector2( -178, 5 )
 
 [node name="S" parent="Keys" instance=ExtResource( 1 )]
 position = Vector2( -159, 5 )
-texture = ExtResource( 13 )
 key = "S"
 
 [node name="D" parent="Keys" instance=ExtResource( 1 )]
 position = Vector2( -140, 5 )
-texture = ExtResource( 10 )
 key = "D"
 
 [node name="F" parent="Keys" instance=ExtResource( 1 )]
 position = Vector2( -121, 5 )
-texture = ExtResource( 11 )
 key = "F"
 
 [node name="G" parent="Keys" instance=ExtResource( 1 )]
 position = Vector2( -102, 5 )
-texture = ExtResource( 9 )
 key = "G"
 
 [node name="H" parent="Keys" instance=ExtResource( 1 )]
 position = Vector2( -83, 5 )
-texture = ExtResource( 3 )
 key = "H"
 
 [node name="J" parent="Keys" instance=ExtResource( 1 )]
 position = Vector2( -64, 5 )
-texture = ExtResource( 8 )
 key = "J"
 
 [node name="K" parent="Keys" instance=ExtResource( 1 )]
 position = Vector2( -45, 5 )
-texture = ExtResource( 7 )
 key = "K"
 
 [node name="L" parent="Keys" instance=ExtResource( 1 )]
 position = Vector2( -16, 18 )
-texture = ExtResource( 20 )
 key = "L"
 
 [node name="Z" parent="Keys" instance=ExtResource( 1 )]
 position = Vector2( -169, 28 )
-texture = ExtResource( 27 )
 key = "Z"
 
 [node name="X" parent="Keys" instance=ExtResource( 1 )]
 position = Vector2( -150, 28 )
-texture = ExtResource( 23 )
 key = "X"
 
 [node name="C" parent="Keys" instance=ExtResource( 1 )]
 position = Vector2( -131, 28 )
-texture = ExtResource( 5 )
 key = "C"
 
 [node name="V" parent="Keys" instance=ExtResource( 1 )]
 position = Vector2( -112, 28 )
-texture = ExtResource( 25 )
 key = "V"
 
 [node name="B" parent="Keys" instance=ExtResource( 1 )]
 position = Vector2( -93, 28 )
-texture = ExtResource( 29 )
 key = "B"
 
 [node name="N" parent="Keys" instance=ExtResource( 1 )]
 position = Vector2( -74, 28 )
-texture = ExtResource( 24 )
 key = "N"
 
 [node name="M" parent="Keys" instance=ExtResource( 1 )]
 position = Vector2( -54, 28 )
-texture = ExtResource( 19 )
 key = "M"
 
 [node name="Q" parent="Keys" instance=ExtResource( 1 )]
 position = Vector2( -189, -19 )
-texture = ExtResource( 21 )
 key = "Q"
 
 [node name="W" parent="Keys" instance=ExtResource( 1 )]
 position = Vector2( -169, -18 )
-texture = ExtResource( 26 )
 key = "W"
 
 [node name="E" parent="Keys" instance=ExtResource( 1 )]
 position = Vector2( -150, -18 )
-texture = ExtResource( 22 )
 key = "E"
 
 [node name="R" parent="Keys" instance=ExtResource( 1 )]
 position = Vector2( -131, -18 )
-texture = ExtResource( 28 )
 key = "R"
 
 [node name="T" parent="Keys" instance=ExtResource( 1 )]
 position = Vector2( -112, -18 )
-texture = ExtResource( 30 )
 key = "T"
 
 [node name="Y" parent="Keys" instance=ExtResource( 1 )]
 position = Vector2( -93, -18 )
-texture = ExtResource( 18 )
 key = "Y"
 
 [node name="U" parent="Keys" instance=ExtResource( 1 )]
 position = Vector2( -74, -18 )
-texture = ExtResource( 15 )
 key = "U"
 
 [node name="I" parent="Keys" instance=ExtResource( 1 )]
 position = Vector2( -58, -18 )
-texture = ExtResource( 14 )
 key = "I"
 
 [node name="O" parent="Keys" instance=ExtResource( 1 )]
-position = Vector2( -41, -18 )
-texture = ExtResource( 16 )
+position = Vector2( -44, -43 )
 key = "O"
 
 [node name="P" parent="Keys" instance=ExtResource( 1 )]
-position = Vector2( -22, -20 )
-texture = ExtResource( 17 )
+position = Vector2( -20, -18 )
 key = "P"
 
 [node name="Bullet" parent="." instance=ExtResource( 12 )]
@@ -199,6 +150,7 @@ position = Vector2( 128, -28 )
 rotation = 1.27907
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 position = Vector2( -104, 4 )
 current = true
 zoom = Vector2( 0.5, 0.5 )
@@ -209,3 +161,6 @@ margin_top = -113.0
 margin_right = 169.0
 margin_bottom = 133.0
 rect_scale = Vector2( 0.809269, 0.809269 )
+
+[node name="GroundKey" parent="." instance=ExtResource( 34 )]
+position = Vector2( -39, -18 )

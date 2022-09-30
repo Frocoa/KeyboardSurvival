@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/Spritesheets/EMPTY1.png" type="Texture" id=1]
+
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( -142, -42, -123, -42, -123, -19, -142, -19 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( -142, -42, -123, -42, -123, -19, -142, -19 ) ]
+
+[node name="GroundKey" type="Sprite"]
+texture = ExtResource( 1 )
+hframes = 3
+
+[node name="Poligono2" type="NavigationPolygonInstance" parent="."]
+position = Vector2( 132.5, 29 )
+navpoly = SubResource( 1 )
