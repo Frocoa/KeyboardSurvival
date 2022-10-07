@@ -42,7 +42,7 @@ func _process(delta):
 		else:
 			player.get_node("AnimationPlayer").play("RESET")
 	
-func _input(event):
+func _input(_event):
 	if Input.is_key_pressed(KEY_SHIFT):
 		player_speed = run_speed
 	else:
