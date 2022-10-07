@@ -10,6 +10,8 @@ onready var anim_player = get_node("AnimationPlayer")
 func _ready():
 	connect("body_entered", self, "_on_body_entered")
 	connect("body_exited", self, "_on_body_leave")
+	var path = "res://Sprites/Spritesheets/" + key + ".png"
+	$Sprite.texture = load(path)
 
 func _input(event):
 	if event.is_action_pressed(key):
