@@ -1,6 +1,7 @@
 extends Node2D
 
 export(int) var player_speed = 30
+export(int) var run_speed = 100
 onready var player = get_node("player")
 var directions = {
 	"up": Vector2.UP,
@@ -9,9 +10,8 @@ var directions = {
 	"right": Vector2.RIGHT
 }
 
-
-
 onready var keys = $"%Keys"	
+onready var original_speed = player_speed
 
 onready var current_objective = player.position
 var path = []
@@ -42,3 +42,8 @@ func _process(delta):
 		else:
 			player.get_node("AnimationPlayer").play("RESET")
 	
+func _input(event):
+	if Input.is_key_pressed(KEY_SHIFT):
+		player_speed = run_speed
+	else:
+		player_speed = original_speed 
