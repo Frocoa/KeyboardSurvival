@@ -145,19 +145,6 @@ key = "P"
 [node name="player" parent="." instance=ExtResource( 6 )]
 position = Vector2( -177, 1 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
-visible = false
-position = Vector2( -104, 4 )
-current = true
-zoom = Vector2( 0.5, 0.5 )
-
-[node name="PauseMenu" parent="Camera2D" instance=ExtResource( 2 )]
-margin_left = -101.0
-margin_top = -113.0
-margin_right = 169.0
-margin_bottom = 133.0
-rect_scale = Vector2( 0.809269, 0.809269 )
-
 [node name="GroundKey" parent="." instance=ExtResource( 34 )]
 position = Vector2( -39, -18 )
 
@@ -173,3 +160,16 @@ rotation = -1.85703
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource( 7 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( -104, 4 )
+z_index = 1
+current = true
+zoom = Vector2( 0.5, 0.5 )
+
+[node name="PauseMenu" parent="Camera2D" instance=ExtResource( 2 )]
+margin_left = -101.0
+margin_top = -113.0
+margin_right = 169.0
+margin_bottom = 133.0
+rect_scale = Vector2( 0.809269, 0.809269 )
