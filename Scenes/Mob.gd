@@ -20,10 +20,10 @@ func _ready():
 	
 func disparar():
 	var bullet = bullet_scene.instance()
+	get_parent().add_child(bullet)
 	bullet.direction = (player.position - position).normalized()
 	bullet.position = position + bullet.direction * 20
 	bullet.rotation = bullet.get_angle_to(player.position) - PI/2
-	get_parent().add_child(bullet)
 
 func _on_Timer_timeout():
 	disparar()
