@@ -2,9 +2,11 @@ extends Node2D
 
 export(int) var player_speed = 30
 export(int) var run_speed = 100
+export(PackedScene) var mob_scene
 onready var player = get_node("player")
 onready var anim_tree = player.get_node("AnimationTree")
 onready var playback = anim_tree.get("parameters/playback")
+onready var mob_spawn_location = get_node("MobPath/MobSpawnLocation")
 var directions = {
 	"up": Vector2.UP,
 	"down": Vector2.DOWN,
@@ -28,11 +30,25 @@ func _on_key_pressed(pos):
 	)
 	movement_index = 0
 	current_objective = path[movement_index]
+	
+func spawn_mob():
+	var mob = mob_scene.instance()
+	mob.player = player
+	mob_spawn_location.offset = randi()
+	mob.rotation  = mob_spawn_location.rotation
+	mob.position = mob_spawn_location.position
+	mob.linear_velocity = mob.velocity.rotated(mob.rotation)
+	add_child(mob) # se agrega al tree y se llama a _ready en mob
+	
 
 func _ready():
+	randomize()
 	for key in keys.get_children():
 		key.connect("key_pressed", self, "_on_key_pressed")
 	anim_tree.active = true
+	
+	for i in range(3):
+		spawn_mob()
 	
 
 func _process(delta):

@@ -1,16 +1,23 @@
 extends Area2D
 
+export(int) var speed = 90
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var direction = Vector2(0, 1) # se re setea en mob
 
+#onready var rotation = get_transform().get_rotation()
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	connect("body_entered", self, "_on_body_entered")
 
+func _on_body_entered(body: Node):
+#	body.is_in_group("enemy")
+	if body.has_method("take_damage"):
+		body.take_damage()
+	queue_free()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+# se elimina cuando sale de la pantalla
+func _on_VisibilityNotifier2D_screen_exited():
+	queue_free()
+
+func _process(delta):
+	translate(direction.normalized() * speed * delta)
