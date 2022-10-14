@@ -59,6 +59,10 @@ func _process(delta):
 		if len(path) >= movement_index + 2:
 			movement_index += 1
 			current_objective = path[movement_index]
+			if player.position.x - current_objective[0] > 0:
+				player.scale.x = -1
+			else:
+				player.scale.x = 1
 		else:
 			playback.travel('Idle')
 	
