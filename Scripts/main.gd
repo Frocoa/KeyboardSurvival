@@ -7,12 +7,6 @@ onready var player = get_node("player")
 onready var anim_tree = player.get_node("AnimationTree")
 onready var playback = anim_tree.get("parameters/playback")
 onready var mob_spawn_location = get_node("MobPath/MobSpawnLocation")
-var directions = {
-	"up": Vector2.UP,
-	"down": Vector2.DOWN,
-	"left": Vector2.LEFT,
-	"right": Vector2.RIGHT
-}
 
 onready var keys = $"%Keys"	
 onready var original_speed = player_speed
@@ -47,6 +41,8 @@ func _ready():
 		key.connect("key_pressed", self, "_on_key_pressed")
 	anim_tree.active = true
 	
+	player.connect("player_damaged", self, "_player_damaged")
+	
 	for i in range(3):
 		spawn_mob()
 	
@@ -76,3 +72,6 @@ func _input(_event):
 	else:
 		player_speed = original_speed
 		playback.travel('Walking')
+
+func _player_damaged():
+	playback.travel("Damage")

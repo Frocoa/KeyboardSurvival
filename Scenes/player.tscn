@@ -1,10 +1,30 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Sprites/Dinosaurs/DinoSprites - vita.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/player_script.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7.5, 7.75 )
+
+[sub_resource type="Animation" id=22]
+resource_name = "Damage"
+length = 0.15
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 14, 15, 16 ]
+}
+
+[sub_resource type="Animation" id=23]
+resource_name = "Death"
 
 [sub_resource type="Animation" id=4]
 resource_name = "Idle"
@@ -96,6 +116,9 @@ tracks/1/keys = {
 "values": [ 4, 5, 6, 7, 8, 9 ]
 }
 
+[sub_resource type="AnimationNodeAnimation" id=24]
+animation = "Damage"
+
 [sub_resource type="AnimationNodeAnimation" id=6]
 animation = "Idle"
 
@@ -117,15 +140,33 @@ animation = "Walking"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=21]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=25]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=26]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=27]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=28]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=29]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=30]
+switch_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id=15]
+states/Damage/node = SubResource( 24 )
+states/Damage/position = Vector2( 458, 226 )
 states/Idle/node = SubResource( 6 )
 states/Idle/position = Vector2( 184, 49 )
 states/Run/node = SubResource( 17 )
-states/Run/position = Vector2( 309, 160 )
+states/Run/position = Vector2( 184, 226 )
 states/Walking/node = SubResource( 8 )
 states/Walking/position = Vector2( 458, 49 )
-transitions = [ "Idle", "Walking", SubResource( 9 ), "Walking", "Idle", SubResource( 10 ), "Walking", "Run", SubResource( 18 ), "Run", "Walking", SubResource( 19 ), "Run", "Idle", SubResource( 20 ), "Idle", "Run", SubResource( 21 ) ]
+transitions = [ "Idle", "Walking", SubResource( 9 ), "Walking", "Idle", SubResource( 10 ), "Walking", "Run", SubResource( 18 ), "Run", "Walking", SubResource( 19 ), "Run", "Idle", SubResource( 20 ), "Idle", "Run", SubResource( 21 ), "Idle", "Damage", SubResource( 25 ), "Walking", "Damage", SubResource( 26 ), "Run", "Damage", SubResource( 27 ), "Damage", "Walking", SubResource( 28 ), "Damage", "Run", SubResource( 29 ), "Damage", "Idle", SubResource( 30 ) ]
 start_node = "Idle"
+graph_offset = Vector2( 0, 120.026 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=16]
 
@@ -143,6 +184,8 @@ position = Vector2( 1, -9.25 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Damage = SubResource( 22 )
+anims/Death = SubResource( 23 )
 anims/Idle = SubResource( 4 )
 anims/RESET = SubResource( 2 )
 anims/Run = SubResource( 5 )
