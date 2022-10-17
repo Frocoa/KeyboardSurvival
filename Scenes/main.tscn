@@ -143,7 +143,7 @@ position = Vector2( -20, -18 )
 key = "P"
 
 [node name="player" parent="." instance=ExtResource( 6 )]
-position = Vector2( -177, 1 )
+position = Vector2( -177, 0 )
 
 [node name="GroundKey" parent="." instance=ExtResource( 34 )]
 position = Vector2( -39, -18 )
@@ -160,6 +160,10 @@ rotation = -1.85703
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource( 7 )
+
+[node name="HeartSpawn" type="Node2D" parent="CanvasLayer"]
+position = Vector2( 57, 36 )
+z_index = 4
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( -104, 4 )

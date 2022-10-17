@@ -73,5 +73,5 @@ func _input(_event):
 		player_speed = original_speed
 		playback.travel('Walking')
 
-func _player_damaged():
+func _player_damaged(_hp):
 	playback.travel("Damage")

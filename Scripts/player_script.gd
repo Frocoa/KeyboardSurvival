@@ -1,12 +1,12 @@
 extends KinematicBody2D
 
-onready var maxHp = 6
+export(int) var maxHp = 6
 onready var hp = maxHp
 
-signal player_damaged()
+signal player_damaged(hp)
 
 func take_damage():
-	emit_signal("player_damaged")
+	emit_signal("player_damaged", hp)
 	hp -= 1
 	if hp == 0:
 		on_death()
