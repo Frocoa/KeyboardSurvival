@@ -1,7 +1,7 @@
 extends Area2D
 
 onready var player = get_node("../player")
-const WAIT_FRAMES = 300
+const WAIT_FRAMES = 60
 
 var movement = []
 
