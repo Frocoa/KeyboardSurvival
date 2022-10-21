@@ -9,7 +9,8 @@ onready var playback = anim_tree.get("parameters/playback")
 onready var mob_spawn_location = get_node("MobPath/MobSpawnLocation")
 onready var enemy_dino_spawn = get_node("DinoSpawn")
 var enemyDino = preload("res://Scenes/EvilDino.tscn")
-
+onready var timer = get_node("Time Label")
+onready var foo_label = get_node("Stupid Label")
 onready var keys = $"%Keys"	
 onready var original_speed = player_speed
 
@@ -17,6 +18,8 @@ onready var current_objective = player.position
 var path = []
 var movement_index = 0
 
+var time_start = 0
+var time_now = 0
 
 func _on_key_pressed(pos):
 	path = Navigation2DServer.map_get_path(
@@ -39,9 +42,11 @@ func spawn_mob():
 	
 
 func _ready():
+	OS.get_ticks_msec()
 	randomize()
 	for key in keys.get_children():
 		key.connect("key_pressed", self, "_on_key_pressed")
+		key.connect("key_stomped", self, "_on_key_stomped")
 	anim_tree.active = true
 	
 	player.connect("player_damaged", self, "_player_damaged")
@@ -51,6 +56,11 @@ func _ready():
 	
 
 func _process(delta):
+	
+	time_now = OS.get_ticks_msec()
+	var time_elapsed = time_now - time_start
+	timer.text = time_to_minutes_secs_mili(time_elapsed)
+	
 	if (current_objective - player.position).length() > 0.8:
 		player.position = player.position.move_toward(current_objective, player_speed * delta)
 		
@@ -83,4 +93,14 @@ func _input(_event):
 
 func _player_damaged(_hp):
 	playback.travel("Damage")
-	
+
+func time_to_minutes_secs_mili(time : float):
+	time = time / 1000.0
+	var mins = int(time) / 60
+	time -= mins * 60
+	var secs = int(time) 
+	var mili = int((time - int(time)) * 100)
+	return str("%0*d" % [2, mins]) + ":" + str("%0*d" % [2, secs]) + ":" + str("%0*d" % [2, mili]) 
+
+func _on_key_stomped(key : String):
+	foo_label.text += key
