@@ -18,8 +18,4 @@ func _ready():
 func _player_damaged(hp):
 	var broken_container = containers[(hp-1) /2]
 	var animation = "broken idle" if ((hp%2) == 0) else "empty"
-	print("###############")
-	print ("broken idle" if ((hp%2) == 0) else "empty")
-	print(hp)
-	print("############")
 	broken_container.get_node("AnimatedSprite").animation = animation

@@ -177,3 +177,6 @@ margin_top = -113.0
 margin_right = 169.0
 margin_bottom = 133.0
 rect_scale = Vector2( 0.809269, 0.809269 )
+
+[node name="DinoSpawn" type="Node2D" parent="."]
+position = Vector2( 284, -78 )

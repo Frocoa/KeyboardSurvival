@@ -7,6 +7,8 @@ onready var player = get_node("player")
 onready var anim_tree = player.get_node("AnimationTree")
 onready var playback = anim_tree.get("parameters/playback")
 onready var mob_spawn_location = get_node("MobPath/MobSpawnLocation")
+onready var enemy_dino_spawn = get_node("DinoSpawn")
+var enemyDino = preload("res://Scenes/EvilDino.tscn")
 
 onready var keys = $"%Keys"	
 onready var original_speed = player_speed
@@ -14,6 +16,7 @@ onready var original_speed = player_speed
 onready var current_objective = player.position
 var path = []
 var movement_index = 0
+
 
 func _on_key_pressed(pos):
 	path = Navigation2DServer.map_get_path(
@@ -72,6 +75,12 @@ func _input(_event):
 	else:
 		player_speed = original_speed
 		playback.travel('Walking')
+	
+	if Input.is_key_pressed(KEY_CONTROL):
+		var enemyInst = enemyDino.instance()
+		enemyInst.position = enemy_dino_spawn.position
+		add_child(enemyInst)
 
 func _player_damaged(_hp):
 	playback.travel("Damage")
+	
