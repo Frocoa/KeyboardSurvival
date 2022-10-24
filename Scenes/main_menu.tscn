@@ -1,7 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scenes/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Pizel.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scenes/Dino.gd" type="Script" id=3]
+[ext_resource path="res://Sprites/Dinosaurs/DinoSprites - vita.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/key.tscn" type="PackedScene" id=5]
+[ext_resource path="res://GroundKey.tscn" type="PackedScene" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
@@ -13,6 +17,41 @@ default_font = SubResource( 1 )
 [sub_resource type="DynamicFont" id=3]
 size = 72
 font_data = ExtResource( 2 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 4 )
+region = Rect2( 96, 0, 24, 24 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 4 )
+region = Rect2( 120, 0, 24, 24 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 4 )
+region = Rect2( 144, 0, 24, 24 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 4 )
+region = Rect2( 168, 0, 24, 24 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 4 )
+region = Rect2( 192, 0, 24, 24 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 4 )
+region = Rect2( 216, 0, 24, 24 )
+
+[sub_resource type="SpriteFrames" id=11]
+animations = [ {
+"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 2.25, 1.83334 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -59,3 +98,103 @@ margin_top = 192.0
 margin_right = 729.0
 margin_bottom = 246.0
 text = "EXIT"
+
+[node name="Dino" type="AnimatedSprite" parent="."]
+position = Vector2( 38, 502 )
+scale = Vector2( 6, 6 )
+z_index = 1
+frames = SubResource( 11 )
+frame = 5
+playing = true
+script = ExtResource( 3 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="Dino"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dino/KinematicBody2D"]
+position = Vector2( -0.166667, 5.66666 )
+shape = SubResource( 12 )
+
+[node name="Keys" type="Node2D" parent="."]
+position = Vector2( -6, -5 )
+
+[node name="Key" parent="Keys" instance=ExtResource( 5 )]
+position = Vector2( 296, 575 )
+scale = Vector2( 3, 3 )
+key = "J"
+
+[node name="Key2" parent="Keys" instance=ExtResource( 5 )]
+position = Vector2( 410, 575 )
+scale = Vector2( 3, 3 )
+
+[node name="Key3" parent="Keys" instance=ExtResource( 5 )]
+position = Vector2( 523, 575 )
+scale = Vector2( 3, 3 )
+key = "G"
+
+[node name="Key4" parent="Keys" instance=ExtResource( 5 )]
+position = Vector2( 580, 575 )
+scale = Vector2( 3, 3 )
+
+[node name="Key5" parent="Keys" instance=ExtResource( 5 )]
+position = Vector2( 637, 575 )
+scale = Vector2( 3, 3 )
+key = "M"
+
+[node name="Key6" parent="Keys" instance=ExtResource( 5 )]
+position = Vector2( 694, 575 )
+scale = Vector2( 3, 3 )
+key = "E"
+
+[node name="Key7" parent="Keys" instance=ExtResource( 5 )]
+position = Vector2( 353, 575 )
+scale = Vector2( 3, 3 )
+key = "G"
+
+[node name="Key8" parent="Keys" instance=ExtResource( 5 )]
+position = Vector2( 751, 575 )
+scale = Vector2( 3, 3 )
+key = "S"
+
+[node name="GroundKey" parent="Keys" instance=ExtResource( 6 )]
+position = Vector2( 467, 573 )
+scale = Vector2( 3, 3 )
+
+[node name="GroundKey2" parent="Keys" instance=ExtResource( 6 )]
+position = Vector2( 239, 572 )
+scale = Vector2( 3, 3 )
+
+[node name="GroundKey3" parent="Keys" instance=ExtResource( 6 )]
+position = Vector2( 182, 572 )
+scale = Vector2( 3, 3 )
+
+[node name="GroundKey4" parent="Keys" instance=ExtResource( 6 )]
+position = Vector2( 125, 572 )
+scale = Vector2( 3, 3 )
+
+[node name="GroundKey5" parent="Keys" instance=ExtResource( 6 )]
+position = Vector2( 68, 572 )
+scale = Vector2( 3, 3 )
+
+[node name="GroundKey6" parent="Keys" instance=ExtResource( 6 )]
+position = Vector2( 979.5, 572.5 )
+scale = Vector2( 3, 3 )
+
+[node name="GroundKey7" parent="Keys" instance=ExtResource( 6 )]
+position = Vector2( 922.5, 572.5 )
+scale = Vector2( 3, 3 )
+
+[node name="GroundKey8" parent="Keys" instance=ExtResource( 6 )]
+position = Vector2( 865.5, 572.5 )
+scale = Vector2( 3, 3 )
+
+[node name="GroundKey9" parent="Keys" instance=ExtResource( 6 )]
+position = Vector2( 808.5, 572.5 )
+scale = Vector2( 3, 3 )
+
+[node name="GroundKey10" parent="Keys" instance=ExtResource( 6 )]
+position = Vector2( 11, 572 )
+scale = Vector2( 3, 3 )
+
+[node name="GroundKey11" parent="Keys" instance=ExtResource( 6 )]
+position = Vector2( 1036.5, 572.5 )
+scale = Vector2( 3, 3 )
