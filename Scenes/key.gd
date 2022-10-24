@@ -18,9 +18,9 @@ func _input(event):
 		emit_signal("key_pressed", global_position)
 		
 
-func _on_body_entered(body: Node):
+func _on_body_entered(_body: Node):
 	anim_player.play("Press")
 	emit_signal("key_stomped", key)
 	
-func _on_body_leave(body: Node):
+func _on_body_leave(_body: Node):
 	anim_player.play("Release")

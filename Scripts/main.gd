@@ -42,7 +42,7 @@ func spawn_mob():
 	
 
 func _ready():
-	OS.get_ticks_msec()
+	time_start = OS.get_ticks_msec()
 	randomize()
 	for key in keys.get_children():
 		key.connect("key_pressed", self, "_on_key_pressed")
@@ -51,7 +51,7 @@ func _ready():
 	
 	player.connect("player_damaged", self, "_player_damaged")
 	
-	for i in range(3):
+	for _i in range(3):
 		spawn_mob()
 	
 

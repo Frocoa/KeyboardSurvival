@@ -1,7 +1,7 @@
 extends Area2D
 
 onready var player = get_node("../player")
-const WAIT_FRAMES = 60
+const WAIT_FRAMES = 120
 
 var movement = []
 
@@ -11,7 +11,7 @@ func _ready():
 	connect("body_entered", self, "_on_body_entered")
 	hide()
 
-func _process(delta):
+func _process(_delta):
 	
 	movement.push_back(player.position)
 	

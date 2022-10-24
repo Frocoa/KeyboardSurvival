@@ -31,6 +31,3 @@ func _on_Timer_timeout():
 func _on_VisibilityNotifier2D_screen_exited():
 	self.rotation *= -1
 	self.linear_velocity *= -1
-	
-func _process(delta):
-	pass
