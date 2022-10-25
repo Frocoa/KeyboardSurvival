@@ -6,6 +6,7 @@
 [ext_resource path="res://Sprites/Dinosaurs/DinoSprites - vita.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/key.tscn" type="PackedScene" id=5]
 [ext_resource path="res://GroundKey.tscn" type="PackedScene" id=6]
+[ext_resource path="res://new_theme.tres" type="Theme" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
@@ -13,10 +14,6 @@ font_data = ExtResource( 2 )
 
 [sub_resource type="Theme" id=2]
 default_font = SubResource( 1 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 72
-font_data = ExtResource( 2 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 4 )
@@ -78,25 +75,29 @@ size_flags_vertical = 4
 [node name="Label" type="Label" parent="MainMenu/VBoxContainer"]
 margin_right = 729.0
 margin_bottom = 72.0
-custom_fonts/font = SubResource( 3 )
+theme = ExtResource( 7 )
+theme_type_variation = "BigLabel"
 text = "KEYBOARD SURVIVAL"
 
 [node name="Play" type="Button" parent="MainMenu/VBoxContainer"]
 margin_top = 76.0
 margin_right = 729.0
 margin_bottom = 130.0
+theme = ExtResource( 7 )
 text = "PLAY"
 
 [node name="Credits" type="Button" parent="MainMenu/VBoxContainer"]
 margin_top = 134.0
 margin_right = 729.0
 margin_bottom = 188.0
+theme = ExtResource( 7 )
 text = "CREDITS"
 
 [node name="Exit" type="Button" parent="MainMenu/VBoxContainer"]
 margin_top = 192.0
 margin_right = 729.0
 margin_bottom = 246.0
+theme = ExtResource( 7 )
 text = "EXIT"
 
 [node name="Dino" type="AnimatedSprite" parent="."]
@@ -104,7 +105,7 @@ position = Vector2( 38, 502 )
 scale = Vector2( 6, 6 )
 z_index = 1
 frames = SubResource( 11 )
-frame = 5
+frame = 1
 playing = true
 script = ExtResource( 3 )
 

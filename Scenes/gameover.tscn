@@ -1,0 +1,88 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Sprites/Dinosaurs/DinoSprites - vita.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/gameover.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/layers/parallax-mountain-bg.png" type="Texture" id=31]
+[ext_resource path="res://Sprites/layers/parallax-mountain-montain-far.png" type="Texture" id=32]
+[ext_resource path="res://Sprites/layers/parallax-mountain-foreground-trees.png" type="Texture" id=33]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 336, 0, 24, 24 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 360, 0, 24, 24 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 6.0
+} ]
+
+[node name="Scene" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Parallax-mountain-bg" type="Sprite" parent="."]
+position = Vector2( -99, 30 )
+scale = Vector2( 3.75, 3.7 )
+texture = ExtResource( 31 )
+
+[node name="Parallax-mountain-montain-far" type="Sprite" parent="."]
+position = Vector2( -59, -46 )
+scale = Vector2( 3.75, 3.7 )
+texture = ExtResource( 32 )
+
+[node name="Parallax-mountain-foreground-trees" type="Sprite" parent="."]
+position = Vector2( -89, 72 )
+texture = ExtResource( 33 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( -104, 4 )
+z_index = 1
+current = true
+zoom = Vector2( 0.5, 0.5 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( -102, 2 )
+scale = Vector2( 4, 4 )
+frames = SubResource( 3 )
+playing = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = -297.0
+margin_top = -119.0
+margin_right = 90.0
+margin_bottom = -47.0
+theme_type_variation = "BigLabel"
+text = "GAME OVER"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = -314.0
+margin_top = 61.0
+margin_right = 121.0
+margin_bottom = 99.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Restart" type="Button" parent="HBoxContainer"]
+margin_right = 152.0
+margin_bottom = 38.0
+theme_type_variation = "MiniButton"
+text = "Restart"
+
+[node name="Menu" type="Button" parent="HBoxContainer"]
+margin_left = 156.0
+margin_right = 340.0
+margin_bottom = 38.0
+theme_type_variation = "MiniButton"
+text = "Main Menu"
+
+[node name="Exit" type="Button" parent="HBoxContainer"]
+margin_left = 344.0
+margin_right = 432.0
+margin_bottom = 38.0
+theme_type_variation = "MiniButton"
+text = "Exit"
