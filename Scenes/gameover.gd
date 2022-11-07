@@ -13,7 +13,7 @@ func _ready():
 
 	
 func _on_restart_pressed():
-	get_tree().change_scene("res://Scenes/main.tscn")
+	get_tree().change_scene(Global.reset_level)
 	
 func _on_exit_pressed():
 	get_tree().quit()

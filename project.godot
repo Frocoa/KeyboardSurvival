@@ -24,6 +24,10 @@ config/name="Keyboard Attack"
 run/main_scene="res://Scenes/main_menu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://global.gd"
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true

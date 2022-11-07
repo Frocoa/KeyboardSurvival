@@ -29,7 +29,8 @@ func _on_key_pressed(pos):
 	true
 	)
 	movement_index = 0
-	current_objective = path[movement_index]
+	if(len(path) > 0):
+		current_objective = path[movement_index]
 	
 func spawn_mob():
 	var mob = mob_scene.instance()
