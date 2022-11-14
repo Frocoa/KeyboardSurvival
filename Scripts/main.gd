@@ -20,6 +20,7 @@ var movement_index = 0
 
 var time_start = 0
 var time_now = 0
+var time_elapsed = 0
 
 func _on_key_pressed(pos):
 	path = Navigation2DServer.map_get_path(
@@ -51,15 +52,19 @@ func _ready():
 	anim_tree.active = true
 	
 	player.connect("player_damaged", self, "_player_damaged")
+	player.connect("player_dead", self, "_on_player_death")
 	
 	for _i in range(3):
 		spawn_mob()
+	
+	if not savegame.file_exists(save_path):
+		create_save()
 	
 
 func _process(delta):
 	
 	time_now = OS.get_ticks_msec()
-	var time_elapsed = time_now - time_start
+	time_elapsed = time_now - time_start
 	timer.text = time_to_minutes_secs_mili(time_elapsed)
 	
 	if (current_objective - player.position).length() > 0.8:
@@ -105,3 +110,34 @@ func time_to_minutes_secs_mili(time : float):
 
 func _on_key_stomped(key : String):
 	foo_label.text += key
+	
+
+# SAVE HIGH SCORE LOGIC
+
+var savegame = File.new() #file
+var save_path = "res://savegame.save" #place of the file
+var save_data = {"highscore": 0} #variable to store data
+
+func create_save():
+   savegame.open(save_path, File.WRITE)
+   savegame.store_var(save_data)
+   savegame.close()
+
+func save(high_score):
+	var old_highscore = save_data["highscore"]
+	if !old_highscore:
+		old_highscore = []
+	save_data["highscore"] = old_highscore + [high_score] #data to save
+	savegame.open(save_path, File.WRITE) #open file to write
+	savegame.store_var(save_data) #store the data
+	savegame.close() # close the file
+
+func read_savegame():
+	savegame.open(save_path, File.READ) #open the file
+	save_data = savegame.get_var() #get the value
+	savegame.close() #close the file
+	return save_data["highscore"] #return the value
+
+func _on_player_death():
+	print("Old high_score: " + str(read_savegame()))
+	save(time_to_minutes_secs_mili(time_elapsed))

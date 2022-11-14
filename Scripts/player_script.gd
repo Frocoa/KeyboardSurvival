@@ -4,6 +4,7 @@ export(int) var maxHp = 6
 onready var hp = maxHp
 
 signal player_damaged(hp)
+signal player_dead()
 
 func take_damage():
 	emit_signal("player_damaged", hp)
@@ -13,3 +14,4 @@ func take_damage():
 
 func on_death():
 	get_tree().change_scene("res://Scenes/gameover.tscn")
+	emit_signal("player_dead")
