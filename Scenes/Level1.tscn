@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Sprites/Pizel.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/CanvasLayer.gd" type="Script" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Sprites/layers/parallax-mountain-bg.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/layers/parallax-mountain-montain-far.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/layers/parallax-mountain-foreground-trees.png" type="Texture" id=12]
+[ext_resource path="res://Scenes/gameover.tscn" type="PackedScene" id=13]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -152,6 +153,8 @@ key = "P"
 [node name="player" parent="." instance=ExtResource( 8 )]
 position = Vector2( -177, 0 )
 z_index = 1
+
+[node name="gameover" parent="player" instance=ExtResource( 13 )]
 
 [node name="GroundKey" parent="." instance=ExtResource( 7 )]
 position = Vector2( -39, -18 )

@@ -13,5 +13,4 @@ func take_damage():
 		on_death()
 
 func on_death():
-	get_tree().change_scene("res://Scenes/gameover.tscn")
 	emit_signal("player_dead")
