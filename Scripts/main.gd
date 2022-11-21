@@ -2,7 +2,8 @@ extends Node2D
 
 export(int) var player_speed = 30
 export(int) var run_speed = 100
-export(PackedScene) var mob_scene
+export(PackedScene) var mob_scene1
+export(PackedScene) var mob_scene2
 onready var player = get_node("player")
 onready var anim_tree = player.get_node("AnimationTree")
 onready var playback = anim_tree.get("parameters/playback")
@@ -32,16 +33,6 @@ func _on_key_pressed(pos):
 	movement_index = 0
 	if(len(path) > 0):
 		current_objective = path[movement_index]
-	
-func spawn_mob():
-	var mob = mob_scene.instance()
-	mob.player = player
-	mob_spawn_location.offset = randi()
-	mob.rotation  = mob_spawn_location.rotation
-	mob.position = mob_spawn_location.position
-	mob.linear_velocity = mob.velocity.rotated(mob.rotation)
-	add_child(mob) # se agrega al tree y se llama a _ready en mob
-	
 
 func _ready():
 	time_start = OS.get_ticks_msec()
@@ -53,9 +44,6 @@ func _ready():
 	
 	player.connect("player_damaged", self, "_player_damaged")
 	player.connect("player_dead", self, "_on_player_death")
-	
-	for _i in range(3):
-		spawn_mob()
 	
 	if not savegame.file_exists(save_path):
 		create_save()

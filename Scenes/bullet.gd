@@ -20,4 +20,5 @@ func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
 
 func _process(delta):
-	translate(direction.normalized() * speed * delta)
+	#translate(direction.normalized() * speed * delta)
+	position += direction.normalized() * speed * delta

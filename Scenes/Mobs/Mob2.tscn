@@ -1,24 +1,24 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Sprites/Orc/orc_regular_bald.png" type="Texture" id=1]
-[ext_resource path="res://Scenes/Mob.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/Orc/orc_regular_bald_blue.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Mobs/Mob2.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Bullet.tscn" type="PackedScene" id=3]
 
-[sub_resource type="AtlasTexture" id=1]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 1 )
 region = Rect2( 40, 20, 20, 20 )
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 1 )
 region = Rect2( 80, 20, 20, 20 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 1 )
 region = Rect2( 100, 20, 20, 20 )
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -27,7 +27,7 @@ animations = [ {
 [sub_resource type="CapsuleShape2D" id=5]
 height = 0.0
 
-[node name="Mob" type="RigidBody2D"]
+[node name="Mob2" type="RigidBody2D"]
 collision_mask = 0
 gravity_scale = 0.0
 linear_damp = 0.0
@@ -39,6 +39,7 @@ bullet_scene = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 4 )
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -46,4 +47,9 @@ shape = SubResource( 5 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 
+[node name="ShootTimer" type="Timer" parent="."]
+
+[node name="Rotator" type="Node2D" parent="."]
+
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
+[connection signal="timeout" from="ShootTimer" to="." method="_on_ShootTimer_timeout"]
