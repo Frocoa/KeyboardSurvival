@@ -33,6 +33,7 @@ pause_mode = 2
 position = Vector2( 505, 296 )
 scale = Vector2( 8, 8 )
 frames = SubResource( 3 )
+frame = 1
 playing = true
 
 [node name="Label" type="Label" parent="."]
@@ -72,3 +73,10 @@ margin_right = 432.0
 margin_bottom = 38.0
 theme_type_variation = "MiniButton"
 text = "Exit"
+
+[node name="Button" type="Button" parent="."]
+margin_left = 326.0
+margin_top = 503.0
+margin_right = 638.0
+margin_bottom = 557.0
+text = "Other Level"

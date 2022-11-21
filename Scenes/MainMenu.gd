@@ -10,11 +10,10 @@ func _ready():
 	exit.connect("pressed", self,"_on_exit_pressed")
 
 func _on_play_pressed():
-	Global.reset_level = "res://Scenes/Level1.tscn"
 	get_tree().change_scene("res://Scenes/Level1.tscn")
 	
 func _on_credits_pressed():
-	print("inserte creditos aqui")
+	get_tree().change_scene("res://Scenes/credits.tscn")
 	
 func _on_exit_pressed():
 	get_tree().quit()

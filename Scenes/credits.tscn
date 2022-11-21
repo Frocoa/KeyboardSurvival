@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://credits.gd" type="Script" id=1]
+
+[node name="Container" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+
+[node name="CreditsContainer" type="VBoxContainer" parent="ScrollContainer"]
+margin_left = 247.0
+margin_top = 194.0
+margin_right = 777.0
+margin_bottom = 406.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="ScrollContainer/CreditsContainer"]
+margin_right = 530.0
+margin_bottom = 72.0
+theme_type_variation = "BigLabel"
+text = "CREDITS"
+align = 1
+
+[node name="HSeparator" type="HSeparator" parent="ScrollContainer/CreditsContainer"]
+margin_top = 76.0
+margin_right = 530.0
+margin_bottom = 80.0
+
+[node name="Label2" type="Label" parent="ScrollContainer/CreditsContainer"]
+margin_left = 87.0
+margin_top = 84.0
+margin_right = 442.0
+margin_bottom = 124.0
+size_flags_horizontal = 6
+text = "Dino Characters"
+
+[node name="Label3" type="Label" parent="ScrollContainer/CreditsContainer"]
+margin_left = 135.0
+margin_top = 128.0
+margin_right = 395.0
+margin_bottom = 168.0
+size_flags_horizontal = 6
+text = "arks.itch.io"
+
+[node name="Label4" type="Label" parent="ScrollContainer/CreditsContainer"]
+margin_top = 172.0
+margin_right = 530.0
+margin_bottom = 212.0
+size_flags_horizontal = 4
+text = " twitter: @ScissorMarks"
