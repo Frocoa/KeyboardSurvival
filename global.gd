@@ -1,6 +1,6 @@
 extends Node
 
-var reset_level = ""
+var current_level = ""
 
 # Declare member variables here. Examples:
 # var a = 2
