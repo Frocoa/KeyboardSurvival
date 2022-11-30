@@ -13,10 +13,11 @@ func spawn_mob(offset):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	MenuTheme.stop()
+	LevelTheme.play()
 	for offset in [0, 440, 660, 1090]: # numeros al ojimetro
 		spawn_mob(offset)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	if LevelTheme.playing == false:
+		LevelTheme.play()

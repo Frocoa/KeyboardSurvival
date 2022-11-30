@@ -12,13 +12,17 @@ func _ready():
 	level4.connect("pressed", self, "_on_level4_pressed")
 
 func _on_level1_pressed():
+	ConfirmSound.play()
 	get_tree().change_scene("res://Scenes/Level1.tscn")
 	
 func _on_level2_pressed():
+	ConfirmSound.play()
 	get_tree().change_scene("res://Scenes/Level2.tscn")
 	
 func _on_level3_pressed():
+	ConfirmSound.play()
 	get_tree().change_scene("res://Scenes/Level3.tscn")
 	
 func _on_level4_pressed():
+	ConfirmSound.play()
 	get_tree().change_scene("res://Scenes/Level4.tscn")
