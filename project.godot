@@ -27,6 +27,11 @@ config/icon="res://icon.png"
 [autoload]
 
 Global="*res://global.gd"
+MenuTheme="*res://Sounds/MenuTheme.tscn"
+LevelTheme="*res://Sounds/LevelTheme.tscn"
+ConfirmSound="*res://Sounds/ConfirmSound.tscn"
+HitSound="*res://Sounds/HitSound.tscn"
+DeathSound="*res://Sounds/DeathSound.tscn"
 
 [display]
 

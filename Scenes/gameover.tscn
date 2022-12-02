@@ -33,6 +33,7 @@ pause_mode = 2
 position = Vector2( 505, 296 )
 scale = Vector2( 8, 8 )
 frames = SubResource( 3 )
+frame = 1
 playing = true
 
 [node name="Label" type="Label" parent="."]
@@ -77,8 +78,8 @@ theme_type_variation = "MiniButton"
 text = "Exit"
 
 [node name="Select" type="Button" parent="VBox"]
-margin_left = 86.0
 margin_top = 42.0
+margin_right = 432.0
 margin_bottom = 80.0
 theme_type_variation = "MiniButton"
 text = "Level Selection"
