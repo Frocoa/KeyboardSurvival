@@ -104,7 +104,7 @@ func _on_key_stomped(key : String):
 
 var savegame = File.new() #file
 var save_path = "res://savegame.save" #place of the file
-var save_data = {"highscore": 0} #variable to store data
+var save_data = {"1": 0, "2": 0, "3": 0, "4": 0} #variable to store data
 
 func create_save():
    savegame.open(save_path, File.WRITE)
@@ -112,20 +112,22 @@ func create_save():
    savegame.close()
 
 func save(high_score):
-	var old_highscore = save_data["highscore"]
-	if !old_highscore:
-		old_highscore = []
-	save_data["highscore"] = old_highscore + [high_score] #data to save
-	savegame.open(save_path, File.WRITE) #open file to write
-	savegame.store_var(save_data) #store the data
-	savegame.close() # close the file
+	savegame.open(save_path, File.READ)
+	print(save_data)
+	var old_highscore = save_data[Global.current_level]
+	savegame.close()
+	if old_highscore < high_score:
+		save_data[Global.current_level] = high_score #data to save
+		savegame.open(save_path, File.WRITE) #open file to write
+		savegame.store_var(save_data) #store the data
+		savegame.close() # close the file
 
 func read_savegame():
 	savegame.open(save_path, File.READ) #open the file
 	save_data = savegame.get_var() #get the value
 	savegame.close() #close the file
-	return save_data["highscore"] #return the value
+	return save_data[Global.current_level] #return the value
 
 func _on_player_death():
 	print("Old high_score: " + str(read_savegame()))
-	save(time_to_minutes_secs_mili(time_elapsed))
+	save(time_elapsed)
