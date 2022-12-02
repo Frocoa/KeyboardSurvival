@@ -1,8 +1,7 @@
 extends "../Scripts/main.gd"
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var current_frame = 0
+var delta_frame = 5
 
 func spawn_mob():
 	var mob = mob_scene1.instance()
@@ -15,14 +14,21 @@ func spawn_mob():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	spawn_mob()
 	MenuTheme.stop()
 	LevelTheme.play()
-	for _i in range(3):
-		spawn_mob()
+	
 
 func _process(delta):
 	if LevelTheme.playing == false:
 		LevelTheme.play()
+	
+	if current_frame >= delta_frame:
+		spawn_mob()
+		current_frame = 0
+		delta_frame *= 1.25
+	current_frame += delta
+	print(current_frame)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
