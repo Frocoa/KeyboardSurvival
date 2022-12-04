@@ -16,6 +16,18 @@ var credits = [
 		"name": "Pizel",
 		"author": "copheemoth.itch.io"
 	},
+	{
+		"name": "Mountain Dusk Parallax Background",
+		"author": "ansimuz.itch.io"
+	},
+	{
+		"name": "Music Loop Bundle",
+		"author": "tallbeard.itch.io"
+	},
+	{
+		"name": "8-bit / 16-bit Sound Effects Pack",
+		"author": "jdwasabi.itch.io"
+	}
 ]
 
 func _ready():
