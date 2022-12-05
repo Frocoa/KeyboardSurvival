@@ -113,6 +113,7 @@ func create_save():
 
 func save(high_score):
 	savegame.open(save_path, File.READ)
+	save_data = savegame.get_var()
 	var old_highscore = save_data[Global.current_level]
 	savegame.close()
 	if old_highscore < high_score:
@@ -129,3 +130,4 @@ func read_savegame():
 
 func _on_player_death():
 	save(time_elapsed)
+	Global.current_points = time_to_minutes_secs_mili(time_elapsed)

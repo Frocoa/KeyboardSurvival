@@ -108,12 +108,13 @@ theme = ExtResource( 7 )
 text = "UNFAIR"
 
 [node name="Record" type="Label" parent="."]
-margin_left = 85.0
-margin_top = 22.0
-margin_right = 1109.0
-margin_bottom = 94.0
+margin_left = 3.0
+margin_top = 15.0
+margin_right = 1027.0
+margin_bottom = 87.0
 theme = ExtResource( 7 )
 theme_type_variation = "BigLabel"
+align = 1
 
 [node name="Keys" type="Node2D" parent="."]
 position = Vector2( -6, -5 )
@@ -205,7 +206,7 @@ position = Vector2( 38, 502 )
 scale = Vector2( 6, 6 )
 z_index = 1
 frames = SubResource( 10 )
-frame = 3
+frame = 4
 playing = true
 script = ExtResource( 1 )
 

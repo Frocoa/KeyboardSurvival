@@ -6,6 +6,7 @@ onready var exit = $VBox/HBoxContainer/Exit
 onready var player = $".."
 onready var canvas_layer = $"../../CanvasLayer"
 onready var level_select = $VBox/Select
+onready var points = $VBoxContainer/Points
 
 
 func _ready():
@@ -20,6 +21,7 @@ func _on_player_dead():
 	get_tree().paused = true
 	visible = true
 	canvas_layer.visible = false
+	points.text = str(Global.current_points)
 
 func _on_restart_pressed():
 	ConfirmSound.play()
