@@ -11,7 +11,4 @@ export(int) var dino_offset = 50
 func _process(delta):
 	translate(Vector2(250,0) * delta)
 	
-	if position.x > get_tree().get_root().size.x + dino_offset:
-		position.x = position.x - (get_tree().get_root().size.x + (dino_offset * 5))
-	
 
