@@ -17,7 +17,7 @@ func _ready():
 
 func _on_level_pressed(level):
 	ConfirmSound.play()
-	get_tree().change_scene("res://Scenes/Level" + str(level) + ".tscn")
+	get_tree().change_scene("res://Scenes/levels/Level" + str(level) + ".tscn")
 	Global.current_level = str(level)
 
 func _on_level_enter(level):

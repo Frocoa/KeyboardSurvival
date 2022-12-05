@@ -7,10 +7,10 @@ var velocity = Vector2(speed, 0.0)
 var _timer = null
 var player = null # se setea en main
 
-const rotate_speed = 100
-const shooter_time_wait_time = 0.1
-const spawn_point_count = 4
-const radius = 20
+var rotate_speed = 100
+var shooter_time_wait_time = 0.1
+var spawn_point_count = 4
+var radius = 20
 onready var shoot_timer = $ShootTimer
 onready var rotater = $Rotator
 

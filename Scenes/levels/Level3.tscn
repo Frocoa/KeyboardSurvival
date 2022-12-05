@@ -1,0 +1,205 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Scenes/CanvasLayer.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/levels/Level3.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/layers/parallax-mountain-bg.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/gameover.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/pause_menu.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Bullet.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/key.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Mobs/Mob2.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Sprites/layers/parallax-mountain-montain-far.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/layers/parallax-mountain-foreground-trees.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Pizel.ttf" type="DynamicFontData" id=12]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -320, -104, 0, 0, 0, 0, 128, -104, 0, 0, 0, 0, 129.441, -0.726196, 0, 0, 0, 0, 128, 104, 0, 0, 0, 0, -320, 104, 0, 0, 0, 0, -320, -104 )
+}
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 12 )
+
+[node name="Scene" type="Node2D"]
+script = ExtResource( 2 )
+mob_scene2 = ExtResource( 9 )
+
+[node name="Parallax-mountain-bg" type="Sprite" parent="."]
+position = Vector2( -99, 30 )
+scale = Vector2( 3.75, 3.7 )
+texture = ExtResource( 3 )
+
+[node name="Parallax-mountain-montain-far" type="Sprite" parent="."]
+position = Vector2( -59, -46 )
+scale = Vector2( 3.75, 3.7 )
+texture = ExtResource( 10 )
+
+[node name="Parallax-mountain-foreground-trees" type="Sprite" parent="."]
+position = Vector2( -89, 72 )
+texture = ExtResource( 11 )
+
+[node name="Keys" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="A" parent="Keys" instance=ExtResource( 7 )]
+position = Vector2( -178, 5 )
+
+[node name="S" parent="Keys" instance=ExtResource( 7 )]
+position = Vector2( -159, 5 )
+key = "S"
+
+[node name="D" parent="Keys" instance=ExtResource( 7 )]
+position = Vector2( -140, 5 )
+key = "D"
+
+[node name="F" parent="Keys" instance=ExtResource( 7 )]
+position = Vector2( -121, 5 )
+key = "F"
+
+[node name="G" parent="Keys" instance=ExtResource( 7 )]
+position = Vector2( -102, 5 )
+key = "G"
+
+[node name="H" parent="Keys" instance=ExtResource( 7 )]
+position = Vector2( -83, 5 )
+key = "H"
+
+[node name="J" parent="Keys" instance=ExtResource( 7 )]
+position = Vector2( -64, 5 )
+key = "J"
+
+[node name="K" parent="Keys" instance=ExtResource( 7 )]
+position = Vector2( -45, 5 )
+key = "K"
+
+[node name="L" parent="Keys" instance=ExtResource( 7 )]
+position = Vector2( -26, 5 )
+key = "L"
+
+[node name="Z" parent="Keys" instance=ExtResource( 7 )]
+position = Vector2( -169, 28 )
+key = "Z"
+
+[node name="X" parent="Keys" instance=ExtResource( 7 )]
+position = Vector2( -150, 28 )
+key = "X"
+
+[node name="C" parent="Keys" instance=ExtResource( 7 )]
+position = Vector2( -131, 28 )
+key = "C"
+
+[node name="V" parent="Keys" instance=ExtResource( 7 )]
+position = Vector2( -112, 28 )
+key = "V"
+
+[node name="B" parent="Keys" instance=ExtResource( 7 )]
+position = Vector2( -93, 28 )
+key = "B"
+
+[node name="N" parent="Keys" instance=ExtResource( 7 )]
+position = Vector2( -74, 28 )
+key = "N"
+
+[node name="M" parent="Keys" instance=ExtResource( 7 )]
+position = Vector2( -55, 28 )
+key = "M"
+
+[node name="Q" parent="Keys" instance=ExtResource( 7 )]
+position = Vector2( -189, -19 )
+key = "Q"
+
+[node name="W" parent="Keys" instance=ExtResource( 7 )]
+position = Vector2( -169, -18 )
+key = "W"
+
+[node name="E" parent="Keys" instance=ExtResource( 7 )]
+position = Vector2( -150, -18 )
+key = "E"
+
+[node name="R" parent="Keys" instance=ExtResource( 7 )]
+position = Vector2( -131, -18 )
+key = "R"
+
+[node name="T" parent="Keys" instance=ExtResource( 7 )]
+position = Vector2( -112, -18 )
+key = "T"
+
+[node name="Y" parent="Keys" instance=ExtResource( 7 )]
+position = Vector2( -93, -18 )
+key = "Y"
+
+[node name="U" parent="Keys" instance=ExtResource( 7 )]
+position = Vector2( -74, -18 )
+key = "U"
+
+[node name="I" parent="Keys" instance=ExtResource( 7 )]
+position = Vector2( -55, -18 )
+key = "I"
+
+[node name="O" parent="Keys" instance=ExtResource( 7 )]
+position = Vector2( -36, -18 )
+key = "O"
+
+[node name="P" parent="Keys" instance=ExtResource( 7 )]
+position = Vector2( -17, -18 )
+key = "P"
+
+[node name="player" parent="." instance=ExtResource( 8 )]
+position = Vector2( -177, 0 )
+z_index = 1
+
+[node name="gameover" parent="player" instance=ExtResource( 4 )]
+visible = false
+
+[node name="MobPath" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
+position = Vector2( -320, -104 )
+
+[node name="Bullet" parent="." instance=ExtResource( 6 )]
+position = Vector2( -376, 48 )
+rotation = -1.85703
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource( 1 )
+
+[node name="HeartSpawn" type="Node2D" parent="CanvasLayer"]
+position = Vector2( 57, 36 )
+z_index = 4
+
+[node name="Camera2D" type="Camera2D" parent="."]
+visible = false
+position = Vector2( -104, 4 )
+z_index = 1
+current = true
+zoom = Vector2( 0.5, 0.5 )
+
+[node name="PauseMenu" parent="Camera2D" instance=ExtResource( 5 )]
+margin_left = -101.0
+margin_top = -113.0
+margin_right = 169.0
+margin_bottom = 133.0
+rect_scale = Vector2( 0.809269, 0.809269 )
+
+[node name="DinoSpawn" type="Node2D" parent="."]
+position = Vector2( 284, -78 )
+
+[node name="Time Label" type="Label" parent="."]
+margin_left = 75.0
+margin_top = -137.0
+margin_right = 133.0
+margin_bottom = -121.0
+custom_fonts/font = SubResource( 2 )
+text = "Tiempo"
+
+[node name="Stupid Label" type="Label" parent="."]
+margin_left = -320.0
+margin_top = 129.0
+margin_right = -280.0
+margin_bottom = 143.0
+custom_fonts/font = SubResource( 3 )
