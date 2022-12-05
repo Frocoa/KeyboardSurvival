@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scenes/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Pizel.ttf" type="DynamicFontData" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Scenes/key.tscn" type="PackedScene" id=5]
 [ext_resource path="res://GroundKey.tscn" type="PackedScene" id=6]
 [ext_resource path="res://new_theme.tres" type="Theme" id=7]
+[ext_resource path="res://Sprites/Background.jpg" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
@@ -53,6 +54,10 @@ extents = Vector2( 2.25, 1.83334 )
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 512, 299 )
+texture = ExtResource( 8 )
 
 [node name="MainMenu" type="MarginContainer" parent="."]
 anchor_right = 1.0
@@ -101,11 +106,10 @@ theme = ExtResource( 7 )
 text = "EXIT"
 
 [node name="Dino" type="AnimatedSprite" parent="."]
-position = Vector2( 38, 502 )
+position = Vector2( 29, 502 )
 scale = Vector2( 6, 6 )
 z_index = 1
 frames = SubResource( 11 )
-frame = 3
 playing = true
 script = ExtResource( 3 )
 

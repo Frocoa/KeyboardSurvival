@@ -130,6 +130,7 @@ position = Vector2( -136, -14 )
 z_index = 1
 
 [node name="Scene" parent="player" instance=ExtResource( 8 )]
+visible = false
 
 [node name="MobPath" type="Path2D" parent="."]
 curve = SubResource( 1 )

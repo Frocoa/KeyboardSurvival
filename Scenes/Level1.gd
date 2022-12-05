@@ -28,7 +28,3 @@ func _process(delta):
 		current_frame = 0
 		delta_frame *= 1.25
 	current_frame += delta
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
