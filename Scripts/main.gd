@@ -2,8 +2,6 @@ extends Node2D
 
 export(int) var player_speed = 30
 export(int) var run_speed = 100
-export(PackedScene) var mob_scene1
-export(PackedScene) var mob_scene2
 onready var player = get_node("player")
 onready var anim_tree = player.get_node("AnimationTree")
 onready var playback = anim_tree.get("parameters/playback")
