@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://new_theme.tres" type="Theme" id=1]
+[ext_resource path="res://Sprites/Orc/orc_regular_bald.png" type="Texture" id=2]
+[ext_resource path="res://Presentacion/3.gd" type="Script" id=3]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 40, 20, 20, 20 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 2 )
+region = Rect2( 80, 20, 20, 20 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 100, 20, 20, 20 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Scene" type="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Mob" type="Label" parent="."]
+margin_right = 1024.0
+margin_bottom = 319.0
+theme = ExtResource( 1 )
+theme_type_variation = "BigLabel"
+text = "This is Mob:"
+align = 1
+valign = 1
+
+[node name="Mob2" type="AnimatedSprite" parent="."]
+position = Vector2( 479, 295 )
+scale = Vector2( 8, 8 )
+frames = SubResource( 4 )
+frame = 2
+playing = true
+
+[node name="Mob3" type="Label" parent="."]
+margin_top = 334.0
+margin_right = 1024.0
+margin_bottom = 596.0
+theme = ExtResource( 1 )
+theme_type_variation = "BigLabel"
+text = "Mob doesn't like Charles"
+align = 1
+valign = 1

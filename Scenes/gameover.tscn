@@ -52,6 +52,7 @@ pause_mode = 2
 position = Vector2( 505, 296 )
 scale = Vector2( 8, 8 )
 frames = SubResource( 3 )
+frame = 1
 playing = true
 
 [node name="VBox" type="VBoxContainer" parent="."]

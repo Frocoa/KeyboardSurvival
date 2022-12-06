@@ -13,6 +13,7 @@
 [ext_resource path="res://Sprites/layers/parallax-mountain-foreground-trees.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/Pizel.ttf" type="DynamicFontData" id=12]
 
+
 [sub_resource type="Curve2D" id=1]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -320, -104, 0, 0, 0, 0, 128, -104, 0, 0, 0, 0, 129.441, -0.726196, 0, 0, 0, 0, 128, 104, 0, 0, 0, 0, -320, 104, 0, 0, 0, 0, -320, -104 )
