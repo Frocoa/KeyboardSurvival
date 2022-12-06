@@ -111,7 +111,7 @@ position = Vector2( 29, 502 )
 scale = Vector2( 6, 6 )
 z_index = 1
 frames = SubResource( 11 )
-frame = 1
+frame = 5
 playing = true
 script = ExtResource( 3 )
 

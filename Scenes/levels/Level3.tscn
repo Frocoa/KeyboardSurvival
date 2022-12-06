@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scenes/CanvasLayer.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/levels/Level3.gd" type="Script" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Sprites/layers/parallax-mountain-montain-far.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/layers/parallax-mountain-foreground-trees.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/Pizel.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://GroundKey.tscn" type="PackedScene" id=13]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -46,7 +47,7 @@ texture = ExtResource( 11 )
 unique_name_in_owner = true
 
 [node name="A" parent="Keys" instance=ExtResource( 7 )]
-position = Vector2( -178, 5 )
+position = Vector2( -197, 5 )
 
 [node name="S" parent="Keys" instance=ExtResource( 7 )]
 position = Vector2( -159, 5 )
@@ -57,7 +58,7 @@ position = Vector2( -140, 5 )
 key = "D"
 
 [node name="F" parent="Keys" instance=ExtResource( 7 )]
-position = Vector2( -121, 5 )
+position = Vector2( -131, -18 )
 key = "F"
 
 [node name="G" parent="Keys" instance=ExtResource( 7 )]
@@ -65,7 +66,7 @@ position = Vector2( -102, 5 )
 key = "G"
 
 [node name="H" parent="Keys" instance=ExtResource( 7 )]
-position = Vector2( -83, 5 )
+position = Vector2( -74, 28 )
 key = "H"
 
 [node name="J" parent="Keys" instance=ExtResource( 7 )]
@@ -85,15 +86,15 @@ position = Vector2( -169, 28 )
 key = "Z"
 
 [node name="X" parent="Keys" instance=ExtResource( 7 )]
-position = Vector2( -150, 28 )
+position = Vector2( -150, 51 )
 key = "X"
 
 [node name="C" parent="Keys" instance=ExtResource( 7 )]
-position = Vector2( -131, 28 )
+position = Vector2( -131, 51 )
 key = "C"
 
 [node name="V" parent="Keys" instance=ExtResource( 7 )]
-position = Vector2( -112, 28 )
+position = Vector2( -112, 51 )
 key = "V"
 
 [node name="B" parent="Keys" instance=ExtResource( 7 )]
@@ -101,15 +102,15 @@ position = Vector2( -93, 28 )
 key = "B"
 
 [node name="N" parent="Keys" instance=ExtResource( 7 )]
-position = Vector2( -74, 28 )
+position = Vector2( -74, 51 )
 key = "N"
 
 [node name="M" parent="Keys" instance=ExtResource( 7 )]
-position = Vector2( -55, 28 )
+position = Vector2( -36, 28 )
 key = "M"
 
 [node name="Q" parent="Keys" instance=ExtResource( 7 )]
-position = Vector2( -189, -19 )
+position = Vector2( -188, -41 )
 key = "Q"
 
 [node name="W" parent="Keys" instance=ExtResource( 7 )]
@@ -117,15 +118,15 @@ position = Vector2( -169, -18 )
 key = "W"
 
 [node name="E" parent="Keys" instance=ExtResource( 7 )]
-position = Vector2( -150, -18 )
+position = Vector2( -150, -41 )
 key = "E"
 
 [node name="R" parent="Keys" instance=ExtResource( 7 )]
-position = Vector2( -131, -18 )
+position = Vector2( -131, -41 )
 key = "R"
 
 [node name="T" parent="Keys" instance=ExtResource( 7 )]
-position = Vector2( -112, -18 )
+position = Vector2( -112, -41 )
 key = "T"
 
 [node name="Y" parent="Keys" instance=ExtResource( 7 )]
@@ -133,20 +134,74 @@ position = Vector2( -93, -18 )
 key = "Y"
 
 [node name="U" parent="Keys" instance=ExtResource( 7 )]
-position = Vector2( -74, -18 )
+position = Vector2( -74, -41 )
 key = "U"
 
 [node name="I" parent="Keys" instance=ExtResource( 7 )]
-position = Vector2( -55, -18 )
+position = Vector2( -55, -41 )
 key = "I"
 
 [node name="O" parent="Keys" instance=ExtResource( 7 )]
-position = Vector2( -36, -18 )
+position = Vector2( -36, -41 )
 key = "O"
 
 [node name="P" parent="Keys" instance=ExtResource( 7 )]
-position = Vector2( -17, -18 )
+position = Vector2( -17, -41 )
 key = "P"
+
+[node name="GroundKey" parent="Keys" instance=ExtResource( 13 )]
+position = Vector2( -169, -41 )
+
+[node name="GroundKey2" parent="Keys" instance=ExtResource( 13 )]
+position = Vector2( -150, -18 )
+
+[node name="GroundKey3" parent="Keys" instance=ExtResource( 13 )]
+position = Vector2( -188, -18 )
+
+[node name="GroundKey4" parent="Keys" instance=ExtResource( 13 )]
+position = Vector2( -121, 5 )
+
+[node name="GroundKey5" parent="Keys" instance=ExtResource( 13 )]
+position = Vector2( -112, -18 )
+
+[node name="GroundKey6" parent="Keys" instance=ExtResource( 13 )]
+position = Vector2( -93, -41 )
+
+[node name="GroundKey7" parent="Keys" instance=ExtResource( 13 )]
+position = Vector2( -74, -18 )
+
+[node name="GroundKey8" parent="Keys" instance=ExtResource( 13 )]
+position = Vector2( -55, -18 )
+
+[node name="GroundKey9" parent="Keys" instance=ExtResource( 13 )]
+position = Vector2( -36, -18 )
+
+[node name="GroundKey10" parent="Keys" instance=ExtResource( 13 )]
+position = Vector2( -178, 5 )
+
+[node name="GroundKey11" parent="Keys" instance=ExtResource( 13 )]
+position = Vector2( -150, 28 )
+
+[node name="GroundKey12" parent="Keys" instance=ExtResource( 13 )]
+position = Vector2( -188, 28 )
+
+[node name="GroundKey13" parent="Keys" instance=ExtResource( 13 )]
+position = Vector2( -131, 28 )
+
+[node name="GroundKey14" parent="Keys" instance=ExtResource( 13 )]
+position = Vector2( -112, 28 )
+
+[node name="GroundKey15" parent="Keys" instance=ExtResource( 13 )]
+position = Vector2( -93, 51 )
+
+[node name="GroundKey16" parent="Keys" instance=ExtResource( 13 )]
+position = Vector2( -83, 5 )
+
+[node name="GroundKey17" parent="Keys" instance=ExtResource( 13 )]
+position = Vector2( -55, 28 )
+
+[node name="GroundKey18" parent="Keys" instance=ExtResource( 13 )]
+position = Vector2( -55, 51 )
 
 [node name="player" parent="." instance=ExtResource( 8 )]
 position = Vector2( -177, 0 )
@@ -179,6 +234,7 @@ current = true
 zoom = Vector2( 0.5, 0.5 )
 
 [node name="PauseMenu" parent="Camera2D" instance=ExtResource( 5 )]
+visible = false
 margin_left = -101.0
 margin_top = -113.0
 margin_right = 169.0
