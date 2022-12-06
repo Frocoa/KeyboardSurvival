@@ -1,16 +1,15 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scenes/CanvasLayer.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/levels/Level2.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/layers/parallax-mountain-bg.png" type="Texture" id=3]
-[ext_resource path="res://Scenes/Bullet.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/gameover.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Mobs/Mob1.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/key.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Sprites/layers/parallax-mountain-montain-far.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/layers/parallax-mountain-foreground-trees.png" type="Texture" id=11]
 [ext_resource path="res://Scenes/pause_menu.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Sprites/Pizel.ttf" type="DynamicFontData" id=13]
 [ext_resource path="res://GroundKey.tscn" type="PackedScene" id=14]
 
 [sub_resource type="Curve2D" id=1]
@@ -25,7 +24,6 @@ _data = {
 [node name="Scene" type="Node2D"]
 script = ExtResource( 2 )
 mob_scene1 = ExtResource( 7 )
-mob_scene2 = ExtResource( 13 )
 
 [node name="Parallax-mountain-bg" type="Sprite" parent="."]
 position = Vector2( -99, 30 )
@@ -174,7 +172,7 @@ key = "C"
 position = Vector2( -136, -17 )
 z_index = 1
 
-[node name="gameover" parent="player" instance=ExtResource( 9 )]
+[node name="gameover" parent="player" instance=ExtResource( 4 )]
 visible = false
 
 [node name="MobPath" type="Path2D" parent="."]
@@ -182,10 +180,6 @@ curve = SubResource( 1 )
 
 [node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
 position = Vector2( -320, -104 )
-
-[node name="Bullet" parent="." instance=ExtResource( 6 )]
-position = Vector2( -376, 48 )
-rotation = -1.85703
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource( 1 )
@@ -209,7 +203,7 @@ margin_bottom = 133.0
 rect_scale = Vector2( 0.809269, 0.809269 )
 
 [node name="DinoSpawn" type="Node2D" parent="."]
-position = Vector2( 284, -78 )
+position = Vector2( 190, -42 )
 
 [node name="Time Label" type="Label" parent="."]
 margin_left = 75.0
@@ -221,7 +215,7 @@ text = "Tiempo"
 
 [node name="Stupid Label" type="Label" parent="."]
 margin_left = -320.0
-margin_top = 129.0
+margin_top = 185.0
 margin_right = -280.0
-margin_bottom = 143.0
+margin_bottom = 199.0
 custom_fonts/font = SubResource( 3 )

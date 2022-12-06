@@ -10,7 +10,7 @@ func take_damage():
 	HitSound.play()
 	emit_signal("player_damaged", hp)
 	hp -= 1
-	if hp == 0:
+	if hp <= 0:
 		on_death()
 
 func on_death():

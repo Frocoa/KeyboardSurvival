@@ -38,5 +38,6 @@ func _process(delta):
 		shadow_delay += 1
 		current_frame = 0
 		delta_frame *= 1.25
+		shadow_delay *= 1.5
 		
 	current_frame += delta

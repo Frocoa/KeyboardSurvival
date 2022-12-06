@@ -15,7 +15,7 @@ func _process(delta):
 	
 	movement.push_back(player.position)
 	
-	if movement.size() > (delay * 300 * delta):
+	if movement.size() > (delay * 5000 * delta):
 		if is_ready == false:
 			self.show()
 			is_ready = true
