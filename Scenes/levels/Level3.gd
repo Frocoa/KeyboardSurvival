@@ -17,7 +17,7 @@ func spawn_mob(offset):
 func _ready():
 	MenuTheme.stop()
 	LevelTheme.play()
-	for offset in [0, 440, 660, 1090]: # numeros al ojimetro
+	for offset in [0, 440, 660]: # numeros al ojimetro
 		spawn_mob(offset)
 
 func _process(delta):
