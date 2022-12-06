@@ -198,7 +198,7 @@ text = "Tiempo"
 
 [node name="Stupid Label" type="Label" parent="."]
 margin_left = -320.0
-margin_top = 129.0
+margin_top = 165.0
 margin_right = -280.0
-margin_bottom = 143.0
+margin_bottom = 181.0
 custom_fonts/font = SubResource( 3 )

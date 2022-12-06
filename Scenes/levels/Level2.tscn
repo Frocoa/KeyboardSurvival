@@ -171,7 +171,7 @@ position = Vector2( -60, -16 )
 key = "C"
 
 [node name="player" parent="." instance=ExtResource( 9 )]
-position = Vector2( 22, -32 )
+position = Vector2( -136, -17 )
 z_index = 1
 
 [node name="gameover" parent="player" instance=ExtResource( 9 )]
