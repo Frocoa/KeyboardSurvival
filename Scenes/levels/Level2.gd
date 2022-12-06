@@ -1,4 +1,5 @@
 extends "../../Scripts/main.gd"
+export(PackedScene) var mob_scene1
 export(PackedScene) var mob_scene2
 
 var current_frame = 0

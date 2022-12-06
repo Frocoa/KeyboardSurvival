@@ -13,10 +13,11 @@ blend_mode = 2
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.5, 2 )
+position = Vector2( -0.5, -9 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 material = SubResource( 2 )
+position = Vector2( 0, -8 )
 texture = ExtResource( 1 )
 hframes = 24
