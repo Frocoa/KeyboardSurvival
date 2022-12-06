@@ -35,6 +35,7 @@ DeathSound="*res://Sounds/DeathSound.tscn"
 
 [display]
 
+window/dpi/allow_hidpi=true
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 

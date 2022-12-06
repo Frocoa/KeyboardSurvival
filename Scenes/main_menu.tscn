@@ -7,7 +7,7 @@
 [ext_resource path="res://Scenes/key.tscn" type="PackedScene" id=5]
 [ext_resource path="res://GroundKey.tscn" type="PackedScene" id=6]
 [ext_resource path="res://new_theme.tres" type="Theme" id=7]
-[ext_resource path="res://Sprites/Background.jpg" type="Texture" id=8]
+[ext_resource path="res://Sprites/Background.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
@@ -56,7 +56,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 512, 299 )
+position = Vector2( 512, 269 )
+scale = Vector2( 0.949392, 0.949392 )
 texture = ExtResource( 8 )
 
 [node name="MainMenu" type="MarginContainer" parent="."]
@@ -110,7 +111,6 @@ position = Vector2( 29, 502 )
 scale = Vector2( 6, 6 )
 z_index = 1
 frames = SubResource( 11 )
-frame = 5
 playing = true
 script = ExtResource( 3 )
 
