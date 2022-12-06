@@ -45,7 +45,6 @@ valign = 1
 position = Vector2( 479, 295 )
 scale = Vector2( 8, 8 )
 frames = SubResource( 4 )
-frame = 2
 playing = true
 
 [node name="Mob3" type="Label" parent="."]

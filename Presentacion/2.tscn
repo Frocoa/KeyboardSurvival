@@ -49,5 +49,5 @@ valign = 1
 position = Vector2( 491, 363 )
 scale = Vector2( 8, 8 )
 frames = SubResource( 5 )
-frame = 1
+frame = 2
 playing = true
