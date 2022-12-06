@@ -1,7 +1,7 @@
 extends Area2D
 
 onready var player = get_node("../player")
-var delay = 3
+var delay = 2
 
 var movement = []
 
@@ -15,7 +15,7 @@ func _process(delta):
 	
 	movement.push_back(player.position)
 	
-	if movement.size() > (delay * 5000 * delta):
+	if movement.size() * delta > delay:
 		if is_ready == false:
 			self.show()
 			is_ready = true

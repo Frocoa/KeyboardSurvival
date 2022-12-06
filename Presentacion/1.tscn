@@ -12,6 +12,7 @@ anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="Pregunta" type="Label" parent="."]
+visible = false
 margin_right = 1024.0
 margin_bottom = 600.0
 theme = ExtResource( 1 )
@@ -25,6 +26,9 @@ margin_right = 1026.0
 margin_bottom = 597.0
 theme = ExtResource( 1 )
 theme_type_variation = "BigLabel"
-text = "KEYBOARD SURVIVAL"
+text = "KEYBOARD SURVIVAL
+
+By:
+JGA GAMES"
 align = 1
 valign = 1
