@@ -1,10 +1,9 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scenes/CanvasLayer.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/levels/Level2.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/layers/parallax-mountain-bg.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/gameover.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Bullet.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/key.tscn" type="PackedScene" id=7]
 [ext_resource path="res://GroundKey.tscn" type="PackedScene" id=8]
@@ -13,7 +12,6 @@
 [ext_resource path="res://Sprites/layers/parallax-mountain-foreground-trees.png" type="Texture" id=11]
 [ext_resource path="res://Scenes/pause_menu.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Sprites/Pizel.ttf" type="DynamicFontData" id=13]
-
 
 [sub_resource type="Curve2D" id=1]
 _data = {
