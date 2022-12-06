@@ -1,7 +1,7 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/CanvasLayer.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/layers/parallax-mountain-bg.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/PcBackground.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/levels/Level1.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/gameover.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/pause_menu.tscn" type="PackedScene" id=5]
@@ -9,13 +9,11 @@
 [ext_resource path="res://Scenes/Mobs/Mob1.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/key.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Sprites/layers/parallax-mountain-montain-far.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/layers/parallax-mountain-foreground-trees.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/Pizel.ttf" type="DynamicFontData" id=12]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -320, -104, 0, 0, 0, 0, 128, -104, 0, 0, 0, 0, 129.441, -0.726196, 0, 0, 0, 0, 128, 104, 0, 0, 0, 0, -320, 104, 0, 0, 0, 0, -320, -104 )
+"points": PoolVector2Array( 0, 0, 0, 0, -320, -104, 0, 0, 0, 0, -297, -70, 0, 0, 0, 0, -134, -104, 0, 0, 0, 0, 41, -65, 0, 0, 0, 0, 128, -104, 0, 0, 0, 0, 113, 2, 0, 0, 0, 0, 128, 104, 0, 0, 0, 0, -71, 148, 0, 0, 0, 0, -320, 104, 0, 0, 0, 0, -296, 16, 0, 0, 0, 0, -320, -104 )
 }
 
 [sub_resource type="DynamicFont" id=2]
@@ -28,22 +26,14 @@ font_data = ExtResource( 12 )
 script = ExtResource( 3 )
 mob_scene1 = ExtResource( 7 )
 
-[node name="Parallax-mountain-bg" type="Sprite" parent="."]
-position = Vector2( -99, 30 )
-scale = Vector2( 3.75, 3.7 )
+[node name="PcBackground" type="Sprite" parent="."]
+position = Vector2( -104, 4.00001 )
+scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
-
-[node name="Parallax-mountain-montain-far" type="Sprite" parent="."]
-position = Vector2( -59, -46 )
-scale = Vector2( 3.75, 3.7 )
-texture = ExtResource( 10 )
-
-[node name="Parallax-mountain-foreground-trees" type="Sprite" parent="."]
-position = Vector2( -89, 72 )
-texture = ExtResource( 11 )
 
 [node name="Keys" type="Node2D" parent="."]
 unique_name_in_owner = true
+position = Vector2( 0, 89 )
 
 [node name="A" parent="Keys" instance=ExtResource( 8 )]
 position = Vector2( -178, 5 )
@@ -149,17 +139,18 @@ position = Vector2( -17, -18 )
 key = "P"
 
 [node name="player" parent="." instance=ExtResource( 9 )]
-position = Vector2( -177, 0 )
+position = Vector2( -177, 89 )
 z_index = 1
 
 [node name="gameover" parent="player" instance=ExtResource( 4 )]
 visible = false
 
 [node name="MobPath" type="Path2D" parent="."]
+position = Vector2( -22, -147 )
 curve = SubResource( 1 )
 
 [node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
-position = Vector2( -320, -104 )
+position = Vector2( -72, -72 )
 
 [node name="Bullet" parent="." instance=ExtResource( 6 )]
 position = Vector2( -376, 48 )
@@ -173,6 +164,7 @@ position = Vector2( 57, 36 )
 z_index = 4
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 position = Vector2( -104, 4 )
 z_index = 1
 current = true
@@ -197,8 +189,8 @@ custom_fonts/font = SubResource( 2 )
 text = "Tiempo"
 
 [node name="Stupid Label" type="Label" parent="."]
-margin_left = -320.0
-margin_top = 129.0
-margin_right = -280.0
-margin_bottom = 143.0
+margin_left = -212.0
+margin_top = -92.0
+margin_right = -172.0
+margin_bottom = -76.0
 custom_fonts/font = SubResource( 3 )

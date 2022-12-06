@@ -1,31 +1,28 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Presentacion/8.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/layers/parallax-mountain-bg.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Pizel.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Sprites/PcBackground.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/key.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Sprites/layers/parallax-mountain-montain-far.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/layers/parallax-mountain-foreground-trees.png" type="Texture" id=11]
+
+[sub_resource type="DynamicFont" id=1]
+size = 29
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
 
 [node name="Scene" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="Parallax-mountain-bg" type="Sprite" parent="."]
-position = Vector2( -99, 30 )
-scale = Vector2( 3.75, 3.7 )
-texture = ExtResource( 2 )
-
-[node name="Parallax-mountain-montain-far" type="Sprite" parent="."]
-position = Vector2( -59, -46 )
-scale = Vector2( 3.75, 3.7 )
-texture = ExtResource( 10 )
-
-[node name="Parallax-mountain-foreground-trees" type="Sprite" parent="."]
-position = Vector2( -89, 72 )
-texture = ExtResource( 11 )
+[node name="PcBackground" type="Sprite" parent="."]
+position = Vector2( -102.634, 2.5 )
+scale = Vector2( 3.05, 3.05 )
+texture = ExtResource( 3 )
 
 [node name="Keys" type="Node2D" parent="."]
 unique_name_in_owner = true
+position = Vector2( -3, 91 )
 
 [node name="A" parent="Keys" instance=ExtResource( 8 )]
 position = Vector2( -178, 5 )
@@ -131,7 +128,7 @@ position = Vector2( -17, -18 )
 key = "P"
 
 [node name="player" parent="." instance=ExtResource( 9 )]
-position = Vector2( -177, 0 )
+position = Vector2( -133, 90 )
 z_index = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -144,11 +141,13 @@ zoom = Vector2( 0.5, 0.5 )
 position = Vector2( 284, -78 )
 
 [node name="Label2" type="Label" parent="."]
-margin_left = -356.0
-margin_top = -147.0
-margin_right = 150.0
-margin_bottom = -11.0
-text = "Puedes usar todas
+margin_left = -303.0
+margin_top = -100.0
+margin_right = 92.0
+margin_bottom = -17.0
+custom_fonts/font = SubResource( 1 )
+text = "Puedes usar 
+todas
  las teclas"
 align = 1
 valign = 1
@@ -164,9 +163,9 @@ valign = 1
 
 [node name="Button" type="Button" parent="."]
 margin_left = -182.0
-margin_top = 21.0
+margin_top = 66.0
 margin_right = -2.00002
-margin_bottom = 75.0
+margin_bottom = 120.0
 rect_scale = Vector2( 0.8, 0.8 )
 theme_type_variation = "MiniButton"
 text = "Obviously"
