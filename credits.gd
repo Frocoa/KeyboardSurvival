@@ -27,7 +27,11 @@ var credits = [
 	{
 		"name": "8-bit / 16-bit Sound Effects Pack",
 		"author": "jdwasabi.itch.io"
-	}
+	},
+	{
+		"name": "JGA GAMES",
+		"author": "Joaquín, Geraldyn, Alan",
+	},
 ]
 
 func _ready():

@@ -12,7 +12,6 @@ anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="Pregunta" type="Label" parent="."]
-visible = false
 margin_right = 1024.0
 margin_bottom = 600.0
 theme = ExtResource( 1 )
